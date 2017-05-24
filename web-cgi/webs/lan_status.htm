@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="default.css">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<script language="JavaScript" >
+function init(){
+	var i;
+	var pri = "var_value";
+	var val = pri.split(",");
+	for(i=0;i<4;i++)
+	{
+		document.getElementById("Priority"+i).src =val[i]; 
+	}
+	for(i=4;i<12;i++)
+	{
+	    document.getElementById("Priority"+i).innerHTML =val[i]; 
+	}
+	return;
+}
+</script>
+</head>
+
+<body bgcolor="PaleTurquoise" ONLOAD = "init();">
+<p align="center"><font face="Arial" color=#000000 size=5><strong>Lan Status</strong></font></p>
+<div class="link_status">
+<table class="display"align="center" width="400px">
+	<tr class="display_header">
+		<th>Lan</th>
+		<th>Link</th>
+		<th>Speed</th>
+		<th>Duplex</th>
+	</tr>
+	<tr class="display_even">
+		<td>Lan 1</td>
+		<td><img class="link" id="Priority0"></td>
+		<td id="Priority4"></td>
+		<td id="Priority8"></td>
+	</tr>
+	<tr class="display_odd">
+		<td>Lan 2</td>
+		<td><img class="link" id="Priority1"></td>
+		<td id="Priority5"></td>
+		<td id="Priority9"></td>
+	</tr>
+	<tr class="display_even">
+		<td>Lan 3</td>
+		<td><img class="link" id="Priority2"></td>
+		<td id="Priority6"></td>
+		<td id="Priority10"></td>
+	</tr>
+	<tr class="display_odd">
+		<td>Lan 4</td>
+		<td><img class="link" id="Priority3"></td>
+		<td id="Priority7"></td>
+		<td id="Priority11"></td>
+	</tr>
+</table>
+</div>
+</body>
+
+</html>

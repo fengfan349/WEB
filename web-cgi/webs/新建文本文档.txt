@@ -1,0 +1,63 @@
+function initport()
+{
+	var refresh ="var_value";
+	refresh=refresh.split(",");
+	var p1=refresh[0].toString(2);//1110
+	var p2=refresh[1].toString(2);//1101
+	var p3=refresh[2].toString(2);//1011
+	var p4=refresh[3].toString(2);//0111
+	var i;
+	alert("I am an alert box!!");
+	var name=document.forms[0].port1;
+	for (i=0;i<name.length;i++)
+	{
+		if ((p1&(1<<i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if ((p1&(1<<i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port2;
+	for (i=0;i<name.length;i++)
+	{
+		if ((p2&(1<<i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if ((p2&(1<<i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port3;
+	for (i=0;i<name.length;i++)
+	{
+		if ((p3&(1<<i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if ((p3&(1<<i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port4;
+	for (i=0;i<name.length;i++)
+	{
+		if ((p4&(1<<i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if ((p4&(1<<i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	return;
+}

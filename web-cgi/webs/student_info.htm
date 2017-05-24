@@ -1,0 +1,42 @@
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<script language="JavaScript" >
+function init(){
+	var i;
+	var pri = "var_value";
+	var val = pri.split(",");
+	for(i=0;i<4;i++)
+		document.getElementById("Priority"+i).value = val[i];
+	return;
+}
+</script>
+</head>
+
+<body bgcolor="PaleTurquoise" ONLOAD = "init();">
+<form method=get action="cgi.cgi">
+<input type="hidden" name="CUR_FORM" value="student_info.htm" size="20" />
+<h2 align="center">User Info</h2>
+<table align="center" class="display">
+	<tr class="display_header">
+		<th>NAME</th>
+		<th>SEX</th>
+		<th>AGE</th>
+		<th>ID</th>
+    </tr>
+	<tr class="display_even">
+		<th><input id="Priority0" name="STU_NAME"  size=10></th>
+		<th><input id="Priority1" name="STU_SEX"  size=10></th>
+		<th><input id="Priority2" name="STU_AGE"  size=10></th>
+		<th><input id="Priority3" name="STU_ID"  size=10></th>
+	</tr>
+	<tr class="display_odd">
+		<td colspan=4><input type="submit" name="Submit" value="Apply"></td>
+	</tr>
+</table>	
+</form>
+</body>
+</html>

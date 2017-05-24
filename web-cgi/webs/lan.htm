@@ -1,0 +1,76 @@
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+</head>
+<script language="JavaScript">
+function init(){
+	var i;
+	var pri = "var_value";
+	var val = pri.split(",");
+	document.getElementById("Priority"+0).value = val[0];
+	document.getElementById("Priority"+val[1]).selected=true;
+	return;
+}
+
+function getmode(){
+	var i;
+	for(i=1;i<=5;i++)
+	{
+		if((document.getElementById("Priority"+i).selected) == true)
+		{
+			document.getElementById("Mode").value = i;
+			break;
+		}
+	}
+	return;
+}
+</script>
+
+
+
+<body bgcolor="PaleTurquoise" ONLOAD = "init();">
+
+<p align="center"><font face="Arial" color=#000000 size=5><strong>LAN Configure</strong></font></p>
+<table width="400px" class="display" align="center">
+	<tr class="display_header">
+		<th ><a href="/cgi-bin/html.cgi?CUR_FORM=lan.htm&PORT=1">LAN 1</th>
+		<th ><a href="/cgi-bin/html.cgi?CUR_FORM=lan.htm&PORT=2">LAN 2</th>
+		<th ><a href="/cgi-bin/html.cgi?CUR_FORM=lan.htm&PORT=3">LAN 3</th>
+		<th ><a href="/cgi-bin/html.cgi?CUR_FORM=lan.htm&PORT=4">LAN 4</th>
+	</tr>
+</table>
+<br>
+<table width="400px" class="config" align="center">
+	<tr class="display_header"><th colspan="4">Configure</th></tr>
+	<tr class="display_even">
+		<th  colspan="2"><font face="Arial" color=#000000>Mode</font></th>
+		<td  colspan="2">
+			<select name="Mode1">
+				<option id="Priority1">Auto Speed</option>
+				<option id="Priority2">100M FULL</option>
+				<option id="Priority3">100M HALF</option>
+				<option id="Priority4">10M FULL</option>
+				<option id="Priority5">10M HALF</option>
+			</select>
+		</td>
+	</tr>
+</table>
+<br>
+<form method=get action="cgi.cgi">
+<input type="hidden" name="CUR_FORM" value="lan.htm">
+<input type="hidden" name="CUR_PORT" id="Priority0">
+<input type="hidden" name="Mode" id="Mode">
+<table align="center">
+	<tr>
+		<td colspan=4><input type="submit" onclick="getmode()" name="submit" value="Apply"></td>
+	</tr>
+</table>
+
+</form>
+</body>
+
+</html>

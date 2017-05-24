@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<script language="JavaScript" >
+
+function getport(){
+	var name=document.forms[0].port1;
+	var member=[0,0,0,0];
+	var i;
+	var getvalue;
+	for (i=0;i<name.length;i++)
+	{
+		if (name[i].checked==true)
+		{
+			member[i]=1;
+		}
+	   if (name[i].checked==false)
+		{
+			member[i]=0;
+		}
+		
+	}
+	  //alert("I am an alert box!!");
+	//alert("member[0] "+member[0]+",member[1] "+member[1]+",member[2] "+member[2]+",member[3] "+member[3]);
+	getvalue=member[0]+(member[1]<<1)+(member[2]<<2)+(member[3]<<3);
+	document.getElementById("port1").value=getvalue;
+	
+	name=document.forms[0].port2;
+	for (i=0;i<name.length;i++)
+	{
+		if (name[i].checked==true)
+		{
+			member[i]=1;
+		}
+	   if (name[i].checked==false)
+		{
+			member[i]=0;
+		}
+		
+	}
+	//alert("member[0] "+member[0]+",member[1] "+member[1]+",member[2] "+member[2]+",member[3] "+member[3]);
+	getvalue=member[0]+(member[1]<<1)+(member[2]<<2)+(member[3]<<3);
+	document.getElementById("port2").value=getvalue;
+	
+	name=document.forms[0].port3;
+	for (i=0;i<name.length;i++)
+	{
+		if (name[i].checked==true)
+		{
+			member[i]=1;
+		}
+	   if (name[i].checked==false)
+		{
+			member[i]=0;
+		}
+		
+	}
+	//alert("member[0] "+member[0]+",member[1] "+member[1]+",member[2] "+member[2]+",member[3] "+member[3]);
+	getvalue=member[0]+(member[1]<<1)+(member[2]<<2)+(member[3]<<3);
+	document.getElementById("port3").value=getvalue;
+	
+	name=document.forms[0].port4;
+	for (i=0;i<name.length;i++)
+	{
+		if (name[i].checked==true)
+		{
+			member[i]=1;
+		}
+	   if (name[i].checked==false)
+		{
+			member[i]=0;
+		}
+		
+	}
+	//alert("member[0] "+member[0]+",member[1] "+member[1]+",member[2] "+member[2]+",member[3] "+member[3]);
+	getvalue=member[0]+(member[1]<<1)+(member[2]<<2)+(member[3]<<3);
+	document.getElementById("port4").value=getvalue;
+	return;
+}
+
+function initport()
+{
+	var refresh ="var_value";
+	refresh=refresh.split(",");
+	var p1=refresh[0];//1110
+	//p1=(p1&(1<<2))>>2;
+	var p2=refresh[1];//1101
+	var p3=refresh[2];//1011
+	var p4=refresh[3];//0111
+	var i;
+	//alert("I am an alert box!!"+p1);
+	var name=document.forms[0].port1;
+	for (i=0;i<name.length;i++)
+	{
+		if (((p1&(1<<i))>>i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if (((p1&(1<<i))>>i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port2;
+	for (i=0;i<name.length;i++)
+	{
+		if (((p2&(1<<i))>>i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if (((p2&(1<<i)))>>i==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port3;
+	for (i=0;i<name.length;i++)
+	{
+		if (((p3&(1<<i))>>i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if (((p3&(1<<i))>>i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+	
+	var name=document.forms[0].port4;
+	for (i=0;i<name.length;i++)
+	{
+		if (((p4&(1<<i))>>i)==1)
+		{
+			name[i].checked=true;
+		}	
+		if (((p4&(1<<i))>>i)==0)
+		{
+			name[i].checked=false;
+		}	
+	}
+}
+</script>
+</head>
+<body bgcolor="PaleTurquoise" ONLOAD = "initport();">
+<form>
+<h2 align="center">Port_Base VLAN</h2>
+<table align="center" class="display">
+	<tr class="display_header">
+		<th rowspan="2">LAN</th>
+		<th colspan="4" >Member</th>
+    </tr>
+	<tr class="display_header">
+		<th>LAN_1</th>
+		<th>LAN_2</th>
+		<th>LAN_3</th>
+		<th>LAN_4</th>
+    </tr>
+	<tr class="display_even">
+		<td>1</td>
+		<td><input type="checkbox" name="port1" disabled="disabled"></td>
+		<td><input type="checkbox" name="port1"></td>
+		<td><input type="checkbox" name="port1"></td>
+		<td><input type="checkbox" name="port1"></td>
+	<tr class="display_odd">
+		<td>2</td>
+		<td><input type="checkbox" name="port2"></td>
+		<td><input type="checkbox" name="port2" disabled="disabled"></td>
+		<td><input type="checkbox" name="port2"></td>
+		<td><input type="checkbox" name="port2"></td>
+	</tr>
+	<tr class="display_even">
+		<td>3</td>
+		<td><input type="checkbox" name="port3"></td>
+		<td><input type="checkbox" name="port3"></td>
+		<td><input type="checkbox" name="port3" disabled="disabled"></td>
+		<td><input type="checkbox" name="port3"></td>
+	</tr>
+	<tr class="display_odd">
+		<td>4</td>
+		<td><input type="checkbox" name="port4"></td>
+		<td><input type="checkbox" name="port4"></td>
+		<td><input type="checkbox" name="port4"></td>
+		<td><input type="checkbox" name="port4" disabled="disabled"></td>
+	</tr>
+	
+</table>
+</form>
+<form method=get action="cgi.cgi">
+<input type="hidden" name="CUR_FORM" value="vlan_status.htm" size="20" />
+
+		<p><input type="hidden" name="port1_list" id="port1"></p>
+		<p><input type="hidden" name="port2_list" id="port2"></p>
+		<p><input type="hidden" name="port3_list" id="port3"></p>
+		<p><input type="hidden" name="port4_list" id="port4"></p>
+
+<p align="center"><input type="submit" onclick="getport()" value="Apply" ></p>	
+</form>	
+
+</body>
+</html>

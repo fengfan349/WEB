@@ -1,0 +1,44 @@
+
+@charset "UTF-8";
+/*link style*/
+A:link {font-family:  Arial, Helvetica, sans-serif; font-size: 10pt;text-decoration: none;color:1981d1}
+A:visited {font-family:  Arial, Helvetica, sans-serif; font-size: 10pt;text-decoration: none;color:1981d1}
+A:hover {font-family:  Arial, Helvetica, sans-serif; font-size: 10pt;text-decoration: underline;color:1981d1}
+A:active {font-family:  Arial, Helvetica, sans-serif; font-size: 10pt;text-decoration: underline;color:ff0000}
+/*select button input*/
+input { font-family:  Arial, Helvetica, sans-serif; font-size: 10pt; color:#000000 ; text-decoration: none;}
+select { font-family:  Arial, Helvetica, sans-serif; font-size: 10pt; color:#000000 ; text-decoration: none;}
+
+/*table style*/
+
+th.title{
+  background-color: #CCCCCC;
+  color: #CCCCCC;
+  padding: 2px;
+  width: 25%;
+  height:25px;
+  }
+th.content{
+  background-color: #CCCCCC;
+  color: #CCCCCC;
+  padding: 2px;
+  width: 50%;
+  height:25px;
+	
+}
+tr.display_header {
+background-color : #abbdcb;
+color: black;
+}
+tr.display,tr.display_even {
+background-color : #FFFFFF;
+}
+tr.display_odd {
+background-color : #e1eaf0;
+}
+
+table.display {
+border: solid black 1px;
+border-collapse: collapse;
+}
+
